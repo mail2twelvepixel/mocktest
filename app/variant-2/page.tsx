@@ -4,13 +4,13 @@ import FooterMinimal from '../components/FooterMinimal'
 export default function HomeVariant2() {
   return (
     <div className="min-h-screen flex flex-col" style={{backgroundColor: '#F9FAFB'}}>
-      {/* Custom Green Header */}
-      <header className="sticky top-0 z-50 border-b border-gray-200" style={{backgroundColor: '#E31937'}}>
+      {/* Bosch Tool Red Header */}
+      <header className="sticky top-0 z-50" style={{background: 'linear-gradient(135deg, #E91D26 0%, #C9141D 100%)'}}>
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <a href="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg">
-                <span className="font-bold text-2xl" style={{color: '#E31937'}}>C</span>
+                <span className="font-bold text-2xl" style={{color: '#E91D26'}}>C</span>
               </div>
               <span className="text-2xl font-bold text-white">CoHire</span>
             </a>
@@ -31,7 +31,7 @@ export default function HomeVariant2() {
               <a href="/login" className="text-white hover:opacity-80 transition-colors hidden sm:block">
                 Sign In
               </a>
-              <a href="/signup" className="bg-white px-6 py-2.5 rounded-full hover:opacity-90 transition-all shadow-md hover:shadow-lg font-medium" style={{color: '#E31937'}}>
+              <a href="/signup" className="bg-white px-6 py-2.5 rounded-full hover:opacity-90 transition-all shadow-md hover:shadow-lg font-medium" style={{color: '#E91D26'}}>
                 Get Started
               </a>
             </div>
@@ -44,13 +44,13 @@ export default function HomeVariant2() {
           <div className="text-center mb-20">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight" style={{color: '#212121'}}>
               Rent Tools, Build
-              <span style={{color: '#E31937'}}> Anything</span>
+              <span style={{color: '#E91D26'}}> Anything</span>
             </h1>
             <p className="text-xl mb-8 max-w-2xl mx-auto leading-relaxed" style={{color: '#212121'}}>
               Connect with local tool owners and rent everything you need. From power drills to lawn mowers, find the perfect tool for your project.
             </p>
             <div className="flex justify-center space-x-4">
-              <a href="/signup" className="text-white px-8 py-4 rounded-full hover:opacity-90 transition-all shadow-lg hover:shadow-xl font-semibold text-lg" style={{backgroundColor: '#E31937'}}>
+              <a href="/signup" className="text-white px-8 py-4 rounded-full hover:opacity-90 transition-all shadow-lg hover:shadow-xl font-semibold text-lg" style={{background: 'linear-gradient(135deg, #E91D26 0%, #C9141D 100%)'}}>
                 Find Tools
               </a>
               <a href="/employers" className="bg-white text-gray-900 px-8 py-4 rounded-full border-2 border-gray-200 hover:border-gray-300 transition-all font-semibold text-lg">
@@ -61,7 +61,7 @@ export default function HomeVariant2() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{backgroundColor: '#E31937', opacity: 0.1}}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{backgroundColor: '#E91D26', opacity: 0.15}}>
                 <span className="text-2xl">🔍</span>
               </div>
               <h3 className="text-xl font-bold mb-3" style={{color: '#212121'}}>Find Nearby Tools</h3>
@@ -69,7 +69,7 @@ export default function HomeVariant2() {
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{backgroundColor: '#43A047', opacity: 0.1}}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{backgroundColor: '#E91D26', opacity: 0.15}}>
                 <span className="text-2xl">💰</span>
               </div>
               <h3 className="text-xl font-bold mb-3" style={{color: '#212121'}}>Save Money</h3>
@@ -77,7 +77,7 @@ export default function HomeVariant2() {
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{backgroundColor: '#FDD835', opacity: 0.2}}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{backgroundColor: '#E91D26', opacity: 0.15}}>
                 <span className="text-2xl">✅</span>
               </div>
               <h3 className="text-xl font-bold mb-3" style={{color: '#212121'}}>Trusted Community</h3>
@@ -107,10 +107,10 @@ export default function HomeVariant2() {
             </div>
           </div>
 
-          <div className="rounded-3xl p-12 text-center text-white" style={{background: 'linear-gradient(135deg, #E31937 0%, #FF0D00 100%)'}}>
+          <div className="rounded-3xl p-12 text-center text-white" style={{background: 'linear-gradient(135deg, #E91D26 0%, #C9141D 100%)'}}>
             <h2 className="text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
             <p className="text-xl mb-8 opacity-90">Join thousands of people renting tools in their neighborhood</p>
-            <a href="/signup" className="bg-white px-8 py-4 rounded-full hover:bg-gray-100 transition-all shadow-lg font-bold text-lg inline-block" style={{color: '#E31937'}}>
+            <a href="/signup" className="bg-white px-8 py-4 rounded-full hover:bg-gray-100 transition-all shadow-lg font-bold text-lg inline-block" style={{color: '#E91D26'}}>
               Get Started Today
             </a>
           </div>
