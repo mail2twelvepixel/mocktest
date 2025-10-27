@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoHire - Color Variants Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .tabs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: #f3f4f6;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .tab-button.active {
+            background: #1kd88E5;
+            color: white;
+        }
+
+        .tab-button:hover:not(.active) {
+            background: #e5e7eb;
+        }
+
+        .variant-container {
+            display: none;
+            margin-top: 80px;
+        }
+
+        .variant-container.active {
+            display: block;
+        }
+
+        /* Variant 1 - Blue */
+        .header-1 {
+            background: #1E88E5;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        /* Variant 2 - Green */
+        .header-2 {
+            background: #22c55e;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        /* Variant 3 - Red */
+        .header-3 {
+            background: #DC2626;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-box {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .logo-box-blue { color: #1E88E5; }
+        .logo-box-green { color: #22c55e; }
+        .logo-box-red { color: #DC2626; }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .cta-button {
+            padding: 0.5rem 1.5rem;
+            background: white;
+            border-radius: 20px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .cta-blue { color: #1E88E5; }
+        .cta-green { color: #22c55e; }
+        .cta-red { color: #DC2626; }
+
+        .hero {
+            background: #F9FAFB;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #212121;
+        }
+
+        .hero-blue { color: #1E88E5; }
+        .hero-green { color: #22c55e; }
+        .hero-red { color: #DC2626; }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .features {
+            background: white;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: #212121;
+        }
+
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="showVariant(1)">Variant 1 - Blue</button>
+        <button class="tab-button" onclick="showVariant(2)">Variant 2 - Green</button>
+        <button class="tab-button" onclick="showVariant(3)">Variant 3 - Red</button>
+    </div>
+
+    <!-- Variant 1 - Blue -->
+    <div id="variant-1" class="variant-container active">
+        <header class="header-1">
+            <div class="logo">
+                 <div class="logo-box logo-box-blue">C</div>
+                <span style="font-weight: bold;">CoHire</span>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Browse Tools</a>
+                <a href="#">Rent Tools</a>
+            </div>
+            <button class="cta-button cta-blue">Get Started</button>
+        </header>
+
+        <section class="hero">
+            <h1>Rent Tools, Build <span class="hero-blue">Anything</span></h1>
+            <p style="color: #666; max-width: 600px; margin: 1rem auto;">Connect with local tool owners and rent everything you need. From power drills to lawn mowers, find the perfect tool for your project.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" style="background: #1E88E5; color: white;">Find Tools</button>
+                <button class="btn-primary" style="background: white; color: black; border: 2px solid #e5e7eb;">List Your Tools</button>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Popular Tools Available</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(30,136,229,0.1);">🔨</div>
+                    <h3>Power Tools</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(30,136,229,0.1);">🌳</div>
+                    <h3>Lawn Care</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(30,136,229,0.1);">🔧</div>
+                    <h3>Hand Tools</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(30,136,229,0.1);">🚜</div>
+                    <h3>Equipment</h3>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2025 CoHire. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Variant 2 - Green -->
+    <div id="variant-2" class="variant-container">
+        <header class="header-2">
+            <div class="logo">
+                <div class="logo-box logo-box-green">C</div>
+                <span style="font-weight: bold;">CoHire</span>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Browse Tools</a>
+                <a href="#">Rent Tools</a>
+            </div>
+            <button class="cta-button cta-green">Get Started</button>
+        </header>
+
+        <section class="hero">
+            <h1>Rent Tools, Build <span class="hero-green">Anything</span></h1>
+            <p style="color: #666; max-width: 600px; margin: 1rem auto;">Connect with local tool owners and rent everything you need. From power drills to lawn mowers, find the perfect tool for your project.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" style="background: #22c55e; color: white;">Find Tools</button>
+                <button class="btn-primary" style="background: white; color: black; border: 2px solid #e5e7eb;">List Your Tools</button>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Popular Tools Available</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(34,197,94,0.1);">🔨</div>
+                    <h3>Power Tools</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(34,197,94,0.1);">🌳</div>
+                    <h3>Lawn Care</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(34,197,94,0.1);">🔧</div>
+                    <h3>Hand Tools</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(34,197,94,0.1);">🚜</div>
+                    <h3>Equipment</h3>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2025 CoHire. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Variant 3 - Red -->
+    <div id="variant-3" class="variant-container">
+        <header class="header-3">
+            <div class="logo">
+                <div class="logo-box logo-box-red">C</div>
+                <span style="font-weight: bold;">CoHire</span>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Browse Tools</a>
+                <a href="#">Rent Tools</a>
+            </div>
+            <button class="cta-button cta-red">Get Started</button>
+        </header>
+
+        <section class="hero">
+            <h1>Rent Tools, Build <span class="hero-red">Anything</span></h1>
+            <p style="color: #666; max-width: 600px; margin: 1rem auto;">Connect with local tool owners and rent everything you need. From power drills to lawn mowers, find the perfect tool for your project.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" style="background: #DC2626; color: white;">Find Tools</button>
+                <button class="btn-primary" style="background: white; color: black; border: 2px solid #e5e7eb;">List Your Tools</button>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Popular Tools Available</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(220,38,38,0.1);">🔨</div>
+                    <h3>Power Tools</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(220,38,38,0.1);">🌳</div>
+                    <h3>Lawn Care</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(220,38,38,0.1);">🔧</div>
+                    <h3>Hand Tools</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: rgba(220,38,38,0.1);">🚜</div>
+                    <h3>Equipment</h3>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2025 CoHire. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showVariant(num) {
+            // Hide all variants
+            document.querySelectorAll('.variant-container').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Show selected variant
+            document.getElementById('variant-' + num).classList.add('active');
+            
+            // Update tab buttons
+            document.querySelectorAll('.tab-button').forEach((btn, index) => {
+                if (index === num - 1) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+        }
+        }
+    </script>
+</body>
+</html>
+
