@@ -24,3 +24,16 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Ensure react-date-range calendar displays properly */
+.rdrCalendarWrapper,
+.rdrDateRangePickerWrapper {
+  z-index: 50 !important;
+}
+
+.rdrMonthAndYearWrapper,
+.rdrMonth,
+.rdrDays {
+  z-index: 50 !important;
+  position: relative;
+}
